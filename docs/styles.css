@@ -115,7 +115,7 @@ body {
 		top: 50%
 	}
 	100% {
-		top: 85%;
+		top: 92%;
 		transform: translate(-50%, 0);
 	}
 }
@@ -169,7 +169,7 @@ body {
 }
 
 .openedHer {
-	top: 85%;
+	top: 92%;
 	transform: translate(-50%, 0);
 }
 
