@@ -1,0 +1,309 @@
+h1,
+p {
+	font-family: 'Lucida Handwriting', sans-serif;
+}
+
+p{
+	text-indent: 20px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+h1 {
+	font-weight: 200;
+}
+
+body {
+	margin: 0px;
+}
+
+
+.container {
+	position: relative;
+	width: 100%;
+  min-height: 110dvh;
+	overflow: hidden;
+  background-color: #fce4ec;
+}
+
+.heart {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	transiton: transform 2s;
+	z-index: 1;
+}
+
+.heart > img {
+	width: 50px;
+	height: auto;
+}
+
+.message a{
+  font-weight: bold;
+}
+.message {
+	padding: 20px;
+	background-color: #eee;
+	min-width: 80%;
+	height: 60%;
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%, -50%);
+	z-index: 0;
+	overflow: hidden;
+	animation-name: openmsg;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: paused;
+	animation-fill-mode: forwards;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	border-radius: 5px;
+}
+
+.heart > img:hover {
+	animation-name: beat;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+#messageState {}
+
+@keyframes beat {
+	0% {
+		width: 55px;
+	}
+	25% {
+		width: 65px;
+	}
+	30% {
+		width: 55px;
+	}
+	50% {
+		width: 65px;
+	}
+	60% {
+		width: 55px;
+	}
+	75% {
+		width: 80px;
+	}
+	100% {
+		width: 55px;
+	}
+}
+
+@keyframes openmsg {
+	0% {
+		height: 0px;
+		padding: 0px 20px;
+	}
+	100% {
+		height: 60%;
+		padding: 20px 20px;
+	}
+}
+
+@keyframes heartMove {
+	0% {
+		top: 50%
+	}
+	100% {
+		top: 70%;
+		transform: translate(-50%, 0);
+	}
+}
+
+.openNor {
+	animation-direction: normal;
+	animation-play-state: running;
+}
+
+.closeNor {
+	animation-direction: reverse;
+	animation-play-state: running;
+}
+
+.no-anim {
+	animation: none;
+}
+
+.closed {
+	height: 0px;
+	padding: 0px 20px;
+}
+
+.bottom {
+	bottom: 5px;
+}
+
+.openHer {
+	animation-name: heartMove;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+.closeHer {
+	animation-name: heartMove;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: running;
+	animation-direction: reverse;
+	animation-fill-mode: forwards;
+}
+
+.beating > img {
+	animation-name: beat;
+	animation-duration: 4s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+.openedHer {
+	top: 70%;
+	transform: translate(-50%, 0);
+}
+
+
+.app{
+  background-color: #fce4ec;
+}
+
+/* ANIMATIONS */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-thumb {
+  border: 4px solid #f4f4f4;
+  background-clip: padding-box;
+  border-radius: 14px;
+  background-color: #c1c1c1;
+}
+::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+
+/* APP */
+.app__list {
+  display: grid;
+  grid-template-columns: repeat(6, 16.66%);
+  margin: 20px 10px;
+}
+.app__card {
+  background-color: #FFFFFF;
+  padding: 10px 10px 20px;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+.app__picture {
+  overflow: hidden;
+}
+.app__picture img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+.app__picture img:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.app__title {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 10px;
+  font-size: 1.3rem;
+  letter-spacing: -1px;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  color: #000000;
+}
+
+
+/* CUSTOM */
+@media screen and (max-width: 1200px) {
+  .app__list {
+    grid-template-columns: repeat(5, 20%);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .app__list {
+    grid-template-columns: repeat(4, 25%);
+  }
+}
+@media screen and (max-width: 860px) {
+  .app__list {
+    grid-template-columns: repeat(3, 33.33%);
+  }
+}
+@media screen and (max-width: 800px) {
+  .app__list {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: 750px) {
+  .app__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
