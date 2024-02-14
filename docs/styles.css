@@ -1,6 +1,6 @@
 h1,
 p {
-	font-family: 'Lucida Handwriting', sans-serif;
+	font-family:  'Courier New', Courier, monospace;
 }
 
 p{
@@ -11,6 +11,7 @@ p{
 
 h1 {
 	font-weight: 200;
+  font-weight: bold;
 }
 
 body {
@@ -175,6 +176,7 @@ body {
 
 .app{
   background-color: #fce4ec;
+  overflow: hidden;
 }
 
 /* ANIMATIONS */
